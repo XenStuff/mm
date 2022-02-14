@@ -15,7 +15,11 @@
 #
 #
 
-# Recorder
+ROOT_PATH := official-settings
 $(warning "xdroid: Marking xd status as official build in about firmware.")
-PRODUCT_PACKAGES += \
-    SettingsXDOfficialOverlay
+
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    $(ROOT_PATH)/official
+
+PRODUCT_PACKAGE_OVERLAYS += \
+    $(ROOT_PATH)/official
